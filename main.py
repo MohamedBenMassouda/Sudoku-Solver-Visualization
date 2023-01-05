@@ -1,5 +1,3 @@
-import random
-
 board: list[list[int]] = \
     [[0, 0, 5, 0, 0, 0, 0, 0, 0],
      [0, 0, 0, 0, 0, 0, 0, 0, 0],
