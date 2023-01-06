@@ -9,14 +9,14 @@ board: list[list[int]] = \
      [0, 0, 0, 0, 0, 0, 0, 0, 0],
      [0, 0, 0, 0, 0, 0, 0, 0, 3]]
 
-
 def find_empty(board: list[list[int]]):
-    for i in range(len(board)):
-        for j in range(len(board[i])):
-            if board[i][j] == 0:
-                return i, j
+    for j in range(len(board)):
+        for k in range(len(board[j])):
+            if board[j][k] == 0:
+                return j, k
 
     return False
+
 
 def solve(board: list[list[int]]):
     find = find_empty(board)
@@ -30,7 +30,8 @@ def solve(board: list[list[int]]):
     for i in range(1, 10):
         if check_num(board, i, row, col):
             board[row][col] = i
-
+            
+            # Recursion until the board is solved
             if solve(board):
                 return True
 
@@ -40,24 +41,26 @@ def solve(board: list[list[int]]):
 
 
 
+def check_num(board: list[list[int]],  n: int, row: int, col: int):
+    """Checking Row"""
+    for i in range(len(board)):
+        if board[i][col] == n and i != row:
+            return False
 
-def check_num(board:list[list[int]], i, row:int, col:int):
+    """Checking Col"""
     for j in range(len(board)):
-        if board[j][col] == i and j != row:
+        if board[row][j] == n and j != col:
             return False
 
-    for j in range(len(board[row])):
-        if board[row][j] == i and j != col:
-            return False
-
-    # Checking 3x3
+    """Checking 3x3"""
     box_x = col // 3
     box_y = row // 3
 
-    for j in range(box_y * 3, box_y * 3 + 3):
-        for k in range(box_x * 3, box_x * 3 + 3):
-            if board[j][k] == i and j != row and k != col:
+    for i in range(box_y * 3, box_y * 3 + 3):
+        for j in range(box_x * 3, box_x * 3 + 3):
+            if board[i][j] == n and i != row and j != col:
                 return False
+
 
     return True
 
@@ -65,7 +68,7 @@ def check_num(board:list[list[int]], i, row:int, col:int):
 def print_board(board: list[list[int]]):
     for i in range(len(board)):
         if i % 3 == 0 and i != 0:
-            print("- - - - - - - - - - -")
+            print("- - - - - - - - - -")
 
         for j in range(len(board)):
             if j % 3 == 0 and j != 0:
@@ -75,7 +78,8 @@ def print_board(board: list[list[int]]):
                 print(board[i][j])
 
             else:
-                print(str(board[i][j]) + " " , end="")
+                print(board[i][j], end=" ")
+
 
 
 print("This is the board before solving\n")
