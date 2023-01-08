@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="solve.js" defer></script>
     <title>Sudoku Solver</title>
 </head>
 <body>
-    <h1>Welcome to Sudoku Where you can play or watch the computer solve the board</h1>
-
-    <table>
-        <tbody>
-                <tr>
+     <h1>Welcome to Sudoku Where you can play or watch the computer solve the board</h1>
+     <div>
+     <table>
+         <tbody>
+                 <tr>
                         <td id="cell0-0"></td>
                         <td id="cell0-1"></td>
                         <td id="cell0-2"></td>
@@ -24,99 +26,100 @@
                         <td id="cell0-6"></td>
                         <td id="cell0-7"></td>
                         <td id="cell0-8"></td>
-                </tr>
-                <tr>
-                        <td id="cell1-0"></td>
-                        <td id="cell1-1"></td>
-                        <td id="cell1-2"></td>
-                        <td id="cell1-3"></td>
-                        <td id="cell1-4"></td>
-                        <td id="cell1-5"></td>
-                        <td id="cell1-6"></td>
-                        <td id="cell1-7"></td>
-                        <td id="cell1-8"></td>
-                </tr>
-                <tr>
-                        <td id="cell2-0"></td>
-                        <td id="cell2-1"></td>
-                        <td id="cell2-2"></td>
-                        <td id="cell2-3"></td>
-                        <td id="cell2-4"></td>
-                        <td id="cell2-5"></td>
-                        <td id="cell2-6"></td>
-                        <td id="cell2-7"></td>
-                        <td id="cell2-8"></td>
-                </tr>
-                <tr>
-                        <td id="cell3-0"></td>
-                        <td id="cell3-1"></td>
-                        <td id="cell3-2"></td>
-                        <td id="cell3-3"></td>
-                        <td id="cell3-4"></td>
-                        <td id="cell3-5"></td>
-                        <td id="cell3-6"></td>
-                        <td id="cell3-7"></td>
-                        <td id="cell3-8"></td>
-                </tr>
-                <tr>
-                        <td id="cell4-0"></td>
-                        <td id="cell4-1"></td>
-                        <td id="cell4-2"></td>
-                        <td id="cell4-3"></td>
-                        <td id="cell4-4"></td>
-                        <td id="cell4-5"></td>
-                        <td id="cell4-6"></td>
-                        <td id="cell4-7"></td>
-                        <td id="cell4-8"></td>
-                </tr>
-                <tr>
-                        <td id="cell5-0"></td>
-                        <td id="cell5-1"></td>
-                        <td id="cell5-2"></td>
-                        <td id="cell5-3"></td>
-                        <td id="cell5-4"></td>
-                        <td id="cell5-5"></td>
-                        <td id="cell5-6"></td>
-                        <td id="cell5-7"></td>
-                        <td id="cell5-8"></td>
-                </tr>
-                <tr>
-                        <td id="cell6-0"></td>
-                        <td id="cell6-1"></td>
-                        <td id="cell6-2"></td>
-                        <td id="cell6-3"></td>
-                        <td id="cell6-4"></td>
-                        <td id="cell6-5"></td>
-                        <td id="cell6-6"></td>
-                        <td id="cell6-7"></td>
-                        <td id="cell6-8"></td>
-                </tr>
-                <tr>
-                        <td id="cell7-0"></td>
-                        <td id="cell7-1"></td>
-                        <td id="cell7-2"></td>
-                        <td id="cell7-3"></td>
-                        <td id="cell7-4"></td>
-                        <td id="cell7-5"></td>
-                        <td id="cell7-6"></td>
-                        <td id="cell7-7"></td>
-                        <td id="cell7-8"></td>
-                </tr>
-                <tr>
-                        <td id="cell8-0"></td>
-                        <td id="cell8-1"></td>
-                        <td id="cell8-2"></td>
-                        <td id="cell8-3"></td>
-                        <td id="cell8-4"></td>
-                        <td id="cell8-5"></td>
-                        <td id="cell8-6"></td>
-                        <td id="cell8-7"></td>
-                        <td id="cell8-8"></td>
-                </tr>
-        </tbody>
-    </table>
-    
-    <button class="btn btn-danger" id="generate" onclick="getArray(board)">Generate Puzzle</button>
-    <button class="btn btn-success" id="solve" onclick="solve(board)">Solve</button>
+                 </tr>
+                 <tr>
+                         <td id="cell1-0"></td>
+                         <td id="cell1-1"></td>
+                         <td id="cell1-2"></td>
+                         <td id="cell1-3"></td>
+                         <td id="cell1-4"></td>
+                         <td id="cell1-5"></td>
+                         <td id="cell1-6"></td>
+                         <td id="cell1-7"></td>
+                         <td id="cell1-8"></td>
+                 </tr>
+                 <tr>
+                         <td id="cell2-0"></td>
+                         <td id="cell2-1"></td>
+                         <td id="cell2-2"></td>
+                         <td id="cell2-3"></td>
+                         <td id="cell2-4"></td>
+                         <td id="cell2-5"></td>
+                         <td id="cell2-6"></td>
+                         <td id="cell2-7"></td>
+                         <td id="cell2-8"></td>
+                 </tr>
+                 <tr>
+                         <td id="cell3-0"></td>
+                         <td id="cell3-1"></td>
+                         <td id="cell3-2"></td>
+                         <td id="cell3-3"></td>
+                         <td id="cell3-4"></td>
+                         <td id="cell3-5"></td>
+                         <td id="cell3-6"></td>
+                         <td id="cell3-7"></td>
+                         <td id="cell3-8"></td>
+                 </tr>
+                 <tr>
+                         <td id="cell4-0"></td>
+                         <td id="cell4-1"></td>
+                         <td id="cell4-2"></td>
+                         <td id="cell4-3"></td>
+                         <td id="cell4-4"></td>
+                         <td id="cell4-5"></td>
+                         <td id="cell4-6"></td>
+                         <td id="cell4-7"></td>
+                         <td id="cell4-8"></td>
+                 </tr>
+                 <tr>
+                         <td id="cell5-0"></td>
+                         <td id="cell5-1"></td>
+                         <td id="cell5-2"></td>
+                         <td id="cell5-3"></td>
+                         <td id="cell5-4"></td>
+                         <td id="cell5-5"></td>
+                         <td id="cell5-6"></td>
+                         <td id="cell5-7"></td>
+                         <td id="cell5-8"></td>
+                 </tr>
+                 <tr>
+                         <td id="cell6-0"></td>
+                         <td id="cell6-1"></td>
+                         <td id="cell6-2"></td>
+                         <td id="cell6-3"></td>
+                         <td id="cell6-4"></td>
+                         <td id="cell6-5"></td>
+                         <td id="cell6-6"></td>
+                         <td id="cell6-7"></td>
+                         <td id="cell6-8"></td>
+                 </tr>
+                 <tr>
+                         <td id="cell7-0"></td>
+                         <td id="cell7-1"></td>
+                         <td id="cell7-2"></td>
+                         <td id="cell7-3"></td>
+                         <td id="cell7-4"></td>
+                         <td id="cell7-5"></td>
+                         <td id="cell7-6"></td>
+                         <td id="cell7-7"></td>
+                         <td id="cell7-8"></td>
+                 </tr>
+                 <tr>
+                         <td id="cell8-0"></td>
+                         <td id="cell8-1"></td>
+                         <td id="cell8-2"></td>
+                         <td id="cell8-3"></td>
+                         <td id="cell8-4"></td>
+                         <td id="cell8-5"></td>
+                         <td id="cell8-6"></td>
+                         <td id="cell8-7"></td>
+                         <td id="cell8-8"></td>
+                 </tr>
+         </tbody>
+     </table>
+     
+     <button class="btn btn-danger" id="generate" onclick="getArray(board)">Generate Puzzle</button>
+     <button class="btn btn-success" id="solve" onclick="solve(board)">Solve</button>
+     </div>
 </body>
 </html>
