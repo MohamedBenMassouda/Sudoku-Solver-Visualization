@@ -1,0 +1,40 @@
+h1 {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}
+
+td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+}
+
+tr:nth-child(3n+1) td {
+  border-top: 2px solid black;
+}
+
+tr td:nth-child(3n+1) {
+  border-left: 2px solid black;
+}
+
+.btn {
+    position: absolute;
+    top: 65%;
+    left: 43%;
+}
+
+#generate {
+    margin-left: 100px;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
