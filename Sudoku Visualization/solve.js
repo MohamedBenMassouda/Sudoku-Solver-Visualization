@@ -1,3 +1,5 @@
+const generate = document.getElementById("generate")
+
 let board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
              [0, 0, 0, 0, 0, 0, 0, 0, 0],
              [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -9,14 +11,34 @@ let board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
              [0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 
-function getArray(board){
+function getBoard(board){
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++){
             const cell = document.getElementById(`cell${i}-${j}`);
-            cell.innerText = board[i][j];
+            if (cell.innerText === "") 
+                cell.innerText = board[i][j];
+            
         }   
     }
 }
+
+generate.addEventListener("click", () => {
+    for (let i = 0; i < 9; i++) {
+        for (let j = 0; j < 9; j++){
+            let cell = document.getElementById(`cell${i}-${j}`);
+            cell.innerText = "";
+            
+        }   
+    }
+    for (let i = 0; i < 15; i++) {
+        let row = Math.floor(Math.random() * 9);
+        let col = Math.floor(Math.random() * 9);
+        let num = Math.floor(Math.random() * 9) + 1;
+        cell = document.getElementById(`cell${row}-${col}`);
+        cell.innerText = num;
+        board[row][col] = num;
+    }
+})
 
 function findEmpty(board){
     for (let i = 0; i < board.length; i++) {
