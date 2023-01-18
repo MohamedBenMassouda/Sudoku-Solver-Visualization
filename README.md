@@ -1,3 +1,3 @@
 # Sudoku-Solver
-This is a Soduku Algorithm Solver made using Python and JavaScript
+This is a Sudoku Algorithm Solver made using Python and JavaScript
 
